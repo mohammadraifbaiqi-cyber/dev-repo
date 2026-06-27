@@ -17,6 +17,11 @@ export function createServer() {
     res.json({ message: ping });
   });
 
+  app.get("/api/test", (_req, res) => {
+    const ping = process.env.PING_MESSAGE ?? "ping";
+    res.json({ message: "hello" });
+  });
+
   app.get("/api/demo", handleDemo);
 
   return app;
